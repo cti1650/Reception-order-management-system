@@ -8,7 +8,7 @@ const fetcher = (keyword) => {
 };
 
 export const useSWReducer = (key, init = {}) => {
-  const { data, error } = useSwr(key, fetcher, { refreshInterval: 200 });
+  const { data, error } = useSwr(key, fetcher, { refreshInterval: 1000 });
   const isLoading = !error && !data;
   const dispatch = (value) => {
     window.localStorage.setItem(
